@@ -12,6 +12,8 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  const url = `https://www.github/${data.email}`;
+  console.log(url);
   return `
 
   # ${data.projectName}
@@ -58,7 +60,7 @@ ${data.contributing}
 
 ## Questions
 
-If you have any questions about the repo, open an issue or contact me directly at ${data.email}. You can find more of my work at ${data.username}.
+If you have any questions about the repo, open an issue or contact me directly at <${data.email}>. You can find more of my work at [${data.username}](https://github.com/${data.username}).
 
 
 
