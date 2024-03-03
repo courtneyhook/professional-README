@@ -1,22 +1,42 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
+// const license = data.license;
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license === "none") {
+    return "";
+  } else {
+    return `![Github License](https://img.shields.io/badge/License-${license}-yellow.svg)`;
+  }
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  if (license === "none") {
+    return "";
+  } else {
+    return `[License](#license)`;
+  }
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(license) {
+  if (license === "none") {
+    return "";
+  } else {
+    return `## License
+    
+    This project is using ${license} license.`;
+  }
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  const url = `https://www.github/${data.email}`;
-  console.log(url);
   return `
+# ${data.projectName}
 
-  # ${data.projectName}
+${renderLicenseBadge(data.license)}
 
 ## Description
 
@@ -28,7 +48,7 @@ ${data.projectDescription}
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
-- [License](#license)
+- ${renderLicenseLink(data.license)}
 - [Tests](#tests)
 - [Contribute](#contribute)
 - [Questions](#questions)
@@ -45,9 +65,7 @@ ${data.usage}
 
 ${data.credits}
 
-## License
-
-${data.license}
+${renderLicenseSection(data.license)}
 
 
 ## Tests
@@ -60,7 +78,11 @@ ${data.contributing}
 
 ## Questions
 
-If you have any questions about the repo, open an issue or contact me directly at <${data.email}>. You can find more of my work at [${data.username}](https://github.com/${data.username}).
+If you have any questions about the repo, open an issue or contact me directly at <${
+    data.email
+  }>. You can find more of my work at [${data.username}](https://github.com/${
+    data.username
+  }).
 
 
 

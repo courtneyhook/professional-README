@@ -4,7 +4,7 @@ const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 const fs = require("fs");
 
-// TODO: Create a function to initialize app--WHAT DOES THIS MEAN
+// TODO: Create a function to initialize app
 function init() {
   inquirer
     .prompt([
@@ -32,7 +32,14 @@ function init() {
         type: "list",
         message: "What kind of license should your project have?",
         name: "license",
-        choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "none"],
+        choices: [
+          "MIT",
+          "APACHE 2.0",
+          "GPL 3.0",
+          "BSD 3",
+          "Creative Commons License",
+          "none",
+        ],
       },
       {
         type: "input",
@@ -74,6 +81,3 @@ function init() {
 
 // Function call to initialize app
 init();
-
-//tutoring notes
-//
