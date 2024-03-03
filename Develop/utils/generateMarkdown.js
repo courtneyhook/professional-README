@@ -15,7 +15,7 @@ function renderLicenseLink(license) {
   if (license === "none") {
     return "";
   } else {
-    return `[License](#license)`;
+    return ` - [License](#license)`;
   }
 }
 
@@ -48,7 +48,7 @@ ${data.projectDescription}
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
-- ${renderLicenseLink(data.license)}
+${renderLicenseLink(data.license)}
 - [Tests](#tests)
 - [Contribute](#contribute)
 - [Questions](#questions)
